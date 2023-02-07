@@ -1,0 +1,49 @@
+@import url(https://fonts.google.com/share?selection.family=Noto%20Sans%20KR:wght@100;300;400;500;700;900);
+
+* {
+    margin: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+body {
+    /* width: 100vw; */
+    /* height: 100vh; */
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
+.main_button {
+    margin-right: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+}
+.main_button button + button {
+    margin-left: 10px;
+}
+
+/* login */
+.loginWrap {
+    width: 700px;
+    height: 700px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginWrap .loginContainer {
+    padding: 80px;
+    /* background-color: #000; */
+}
+.loginWrap .loginContainer form h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
