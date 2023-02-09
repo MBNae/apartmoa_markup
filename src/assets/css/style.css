@@ -1,26 +1,60 @@
-@import url(https://fonts.google.com/share?selection.family=Noto%20Sans%20KR:wght@100;300;400;500;700;900);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
+/* reset */
 * {
     margin: 0;
     top: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
-body {
-    /* width: 100vw; */
-    /* height: 100vh; */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
 }
-a {
+
+a,
+i {
     color: #000;
     text-decoration: none;
+    font-style: normal;
 }
 button {
     cursor: pointer;
 }
-.main_button {
-    margin-right: 10px;
-    margin-top: 20px;
+
+body {
+    /* width: 100vw; */
+    /* height: 100vh; */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
     display: flex;
+    align-items: center;
     justify-content: right;
+    box-shadow: 0 4px 5px 0 rgba(238, 238, 238, 0.3);
+}
+
+.main_button {
+    display: flex;
+    margin-right: 30px;
+}
+.main_button button {
+    border: none;
+    background-color: inherit;
+    font-size: 14px;
+    color: #606060;
 }
 .main_button button + button {
     margin-left: 10px;
@@ -28,22 +62,154 @@ button {
 
 /* login */
 .loginWrap {
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #000;
+    border: 1px solid #d6d6d6;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .loginWrap .loginContainer {
-    padding: 80px;
-    /* background-color: #000; */
+    width: 80%;
 }
 .loginWrap .loginContainer form h2 {
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.inputID input[type='text'],
+.inputPassword input[type='password'] {
+    border: none;
+    background-color: #f8f8f8;
+    width: calc(100% - 10px);
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px 0px 10px 10px;
+    font-size: 18px;
+}
+
+.inputID input[type='text']::placeholder,
+.inputPassword input[type='password']::placeholder {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.loginWrap .loginContainer form input[type='checkbox'] {
+    display: none;
+}
+.checkboxCircle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #c7c7c7;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+.checkboxCircle::after {
+    content: '✔';
+    font-size: 10px;
+    color: #eeeeee;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.checkboxCircle.active {
+    background-color: #449ce8;
+}
+.checkboxCircle::after.active {
+    color: #fff;
+}
+
+.closeButton {
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='43' height='43' viewBox='0 0 44 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='11.0391' y1='10.9589' x2='32.2523' y2='32.1721' stroke='%23AFAFAF'/%3E%3Cline x1='32.2539' y1='10.252' x2='11.0407' y2='31.4652' stroke='%23AFAFAF'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.flexInline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dotShape {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ddd;
+    vertical-align: 3px;
+    margin-right: 7px;
+}
+.dotLeftMargin + .dotLeftMargin {
+    margin-left: 7px;
+}
+
+.submitButton {
+    border: none;
+    background-color: #449ce8;
+    font-size: 20px;
+    width: 100%;
+    padding: 17px 0;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.socialBox {
+    text-align: center;
+}
+
+.socialBox p {
+    margin-bottom: 20px;
+    color: #828288;
+}
+
+.socialImg {
+    margin: 0 auto;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/socialIcon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.socialImg + .socialImg {
+    margin-left: 30px;
+}
+.socialImg:nth-child(1) {
+    background-position-x: 0;
+}
+.socialImg:nth-child(2) {
+    background-position-x: -70px;
+}
+.socialImg:nth-child(3) {
+    background-position-x: -140px;
+}
+
+.ir {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
 }

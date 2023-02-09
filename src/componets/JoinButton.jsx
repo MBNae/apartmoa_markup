@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Join = () => {
-    return <button>Join</button>;
+const Join = ({ onDisplay }) => {
+    return (
+        <button onClick={onDisplay} name="join">
+            Join
+        </button>
+    );
 };
 
 export default Join;
